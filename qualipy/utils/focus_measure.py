@@ -42,7 +42,7 @@ def TENG(img):
     :returns: numpy.float32 -- the degree of focus
     """
     gaussianX = cv2.Sobel(img, cv2.CV_64F, 1, 0)
-    gaussianY = cv2.Sobel(img, cv2.CV_64F, 1, 0)
+    gaussianY = cv2.Sobel(img, cv2.CV_64F, 0, 1)
     return numpy.mean(gaussianX * gaussianX +
                       gaussianY * gaussianY)
 
